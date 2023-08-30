@@ -1,1 +1,1 @@
-# cardioDisease_riskVariants
+# Computational Method to Identify Cardiovascular Disease-Risk Variants
