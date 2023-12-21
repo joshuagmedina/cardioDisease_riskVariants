@@ -24,6 +24,9 @@ df <- read.table("cardio_gwas_SNPs", sep = "\t", header = TRUE)
 rsids_df <- df$rsID
 rsids_df <- as.data.frame(rsids_df)
 
+# Get arguments for pupulations from prompt
+args <- commandArgs(trailingOnly = TRUE)
+
 # Variable initialization
 ld_results <- NULL
 error_log <- NULL
@@ -43,7 +46,7 @@ for (i in 1:num_chunks) {
 
   # Define tissues and populations
   tissues <- c("Heart_Left_Ventricle")
-  populations <- c("AFR", "EUR", "SAS", "EAS", "AMR")
+  populations <- args[1]
 
   # Run LDexpress
   tryCatch({
